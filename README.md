@@ -5,4 +5,4 @@ Small HTML library for Haskell.
 *none*
 
 #### Version
-
+v0.1
