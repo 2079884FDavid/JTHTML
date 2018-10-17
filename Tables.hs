@@ -1,8 +1,8 @@
-module HTML.Tables
+module JTHTML.Tables
 ( toTable
 ) where
 
-import HTML.Tags
+import JTHTML.Tags
 
 toTableRow :: String -> [String] -> String
 toTableRow cellTag xs = tagItem "tr" $ concat ys

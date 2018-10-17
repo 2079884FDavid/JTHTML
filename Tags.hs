@@ -1,4 +1,4 @@
-module HTML.Tags
+module JTHTML.Tags
 ( tagItem
 , tagItemAttr
 ) where

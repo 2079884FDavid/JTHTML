@@ -1,8 +1,8 @@
-module HTML.Lists
+module JTHTML.Lists
 ( toUnorderedList
 ) where
 
-import HTML.Tags
+import JTHTML.Tags
 
 toListItem :: String -> String
 toListItem = tagItem "li"
