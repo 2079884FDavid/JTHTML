@@ -1,2 +1,8 @@
 # JTHTML
-HTML library for Haskell
+Small HTML library for Haskell.
+
+# Dependencies
+*none*
+
+#### Version
+v0.1
