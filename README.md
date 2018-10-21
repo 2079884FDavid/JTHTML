@@ -38,7 +38,14 @@ If your repository contains this library as a submodule run the following:
     
 
 # Examples
-TODO
+
+Functions in module **`JTHTML.Tags`**: `tagItem` adds the specified HTML tag to the string. `tagItemAttr` adds additionally all attributes specified in the list to the tag.
+
+    *JTHTML.Tags> let s = "Hello World"
+    *JTHTML.Tags> tagItem "p" s
+    "<p>Hello World</p>\n"
+    *JTHTML.Tags> tagItemAttr "p" ["style=\"color:blue;\""] s
+    "<p style=\"color:blue;\">Hello World</p>\n"
 
 # Dependencies
 *none*
