@@ -42,8 +42,11 @@ If your repository contains this library as a submodule run the following:
 # Usage Examples
 
 ### `JTHTML.Tags`
-**`tagItem`** adds the specified HTML tag to the string.<br/>
-**`tagItemAttr`** adds additionally all attributes specified in the list to the tag.
+**`tagItem`** `:: String -> String -> String`<br/>
+Adds the specified HTML tag to the string.
+
+**`tagItemAttr`** `:: String -> [String] -> String -> String`<br/>
+Adds additionally all attributes specified in the list to the tag.
 
     *JTHTML.Tags> let s = "Hello World"
     *JTHTML.Tags> tagItem "p" s
@@ -52,7 +55,8 @@ If your repository contains this library as a submodule run the following:
     "<p style=\"color:blue\">Hello World</p>\n"
 
 ### `JTHTML.Lists`
-**`toUnorderedList`** creates an unordered list of the elements in the list. If the specified, it uses the bulletpoint style of the first argument.
+**`toUnorderedList`** `:: Maybe String -> [String] -> String`<br/>
+Creates an unordered list of the elements in the list. If the first argument is not `Nothing`, it uses the bulletpoint style defined in the first argument.
 
     *JTHTML.Lists> let l = ["foo", "bar", "baz", "qux"]
     *JTHTML.Lists> putStr $ toUnorderedList (Just "circle") l
@@ -63,7 +67,8 @@ If your repository contains this library as a submodule run the following:
     </ul>
 
 ### `JTHTML.Tables`
-**`toTable`** creates an HTML list where the first argument is a list of table headers (the bold text on top of each column). If this is an empty list the table will have no headers. The second argument is a list of lists where each lists contains the content of a single row.
+**`toTable`** `:: [String] -> [[String]] -> String`<br/>
+Creates an HTML list where the first argument is a list of table headers (the bold text on top of each column). If this is an empty list the table will have no headers. The second argument is a list of lists where each list contains the content of a single row.
 
     *JTHTML.Tables> let h = ["Name", "Nickname"]
     *JTHTML.Tables> let c = [["Alexander", "Alex"], ["Elizabeth", "Lizzy"], ["Patrick", "Pat"]]
