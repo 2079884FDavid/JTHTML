@@ -53,6 +53,13 @@ Functions in module **`JTHTML.Lists`**: `toUnorderedList` creates an unordered l
     *JTHTML.Lists> toUnorderedList (Just "circle") l
     "<ul style=\"list-style-type:circle\"><li>foo</li>\n<li>bar</li>\n<li>baz</li>\n<li>qux</li>\n</ul>\n"
 
+Functions in module **`JTHTML.Tables`**: `toTable` creates an HTML list where the first argument is a list of table headers (the bold text on top of each column). If this is an empty list the table will have no headers. The second argument is a list of lists where each lists contains the content of a row.
+
+    *JTHTML.Tables> let h = ["Name", "Nickname"]
+    *JTHTML.Tables> let c = [["Alexander", "Alex"], ["Elizabeth", "Lizzy"], ["Patrick", "Pat"]]
+    *JTHTML.Tables> toTable h c
+    "<table style=\"width:100%\"><tr><th>Name</th>\n<th>Nickname</th>\n</tr>\n<tr><td>Alexander</td>\n<td>Alex</td>\n</tr>\n<tr><td>Elizabeth</td>\n<td>Lizzy</td>\n</tr>\n<tr><td>Patrick</td>\n<td>Pat</td>\n</tr>\n</table>\n"
+
 # Dependencies
 *none*
 
