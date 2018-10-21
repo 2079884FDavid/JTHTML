@@ -83,5 +83,12 @@ If your repository contains this library as a submodule run the following:
 # Dependencies
 *none*
 
-#### Version
+# Misc
+Developer workflow and release management [as described](https://nvie.com/posts/a-successful-git-branching-model/) by Vincent Driessen.
+
+Please check the LICENSE file for legal information.
+
+Please get [in touch](http://www.jacktex.eu/about/contact.php) if you would like to contribute to this project.
+
+### Version
 v0.1
