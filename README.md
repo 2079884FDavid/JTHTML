@@ -1,11 +1,14 @@
 # JTHTML
-Small HTML library for Haskell.
+A small HTML library for Haskell. Useful if you want to convert haskell strings and objects to HTML strings.
 
-# Incorporate
+## Getting started
 
-Check out this [link](https://gist.github.com/gitaarik/8735255) for more information about how to use submodules.
+The following instructions will show you how to incorporate this library into your git project using submodules. For more information about the functionality of submodules check out this [link](https://gist.github.com/gitaarik/8735255).
 
-### Add library
+### Prerequisites/Dependencies
+*none* =)
+
+### Add the library to your project
 You have an existing project:
 
     myproject$ tree -aL 1
@@ -15,12 +18,11 @@ You have an existing project:
 
     1 directory, 1 file
 
-To add this library to your `myproject` run:
+To add this library to your `myproject` simply run the following command at the root of your repository (or wherever you keep your source code). *If you have a libraries directory (such as "lib") specifically for your project run the command inside that directory instead.*
 
     myproject$ git submodule add https://github.com/2079884FDavid/JTHTML.git
 
-*If you have a libraries directory for your project run the previous command in that directory instead.*
-To refer to the library from your source code simply use `import JTHTML.`
+To refer to the library from your source code simply use `import JTHTML.[module]`
 
 ### Update to latest library release
 
@@ -37,7 +39,7 @@ If your repository contains this library as a submodule run the following:
     git submodule update --init
 
 
-# Examples
+# Usage Examples
 
 ### `JTHTML.Tags`
 **`tagItem`** adds the specified HTML tag to the string.<br/>
@@ -60,7 +62,7 @@ If your repository contains this library as a submodule run the following:
     <li>qux</li>
     </ul>
 
-### `JTHTML.Tables`**
+### `JTHTML.Tables`
 **`toTable`** creates an HTML list where the first argument is a list of table headers (the bold text on top of each column). If this is an empty list the table will have no headers. The second argument is a list of lists where each lists contains the content of a single row.
 
     *JTHTML.Tables> let h = ["Name", "Nickname"]
@@ -80,13 +82,10 @@ If your repository contains this library as a submodule run the following:
     </tr>
     </table>
 
-# Dependencies
-*none*
-
 # Misc
 Developer workflow and release management [as described](https://nvie.com/posts/a-successful-git-branching-model/) by Vincent Driessen.
 
-Please check the LICENSE file for legal information.
+Please check the [LICENSE](LICENSE) file for legal information.
 
 Please get [in touch](http://www.jacktex.eu/about/contact.php) if you would like to contribute to this project.
 
