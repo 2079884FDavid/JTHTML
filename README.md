@@ -47,6 +47,12 @@ Functions in module **`JTHTML.Tags`**: `tagItem` adds the specified HTML tag to 
     *JTHTML.Tags> tagItemAttr "p" ["style=\"color:blue;\""] s
     "<p style=\"color:blue;\">Hello World</p>\n"
 
+Functions in module **`JTHTML.Lists`**: `toUnorderedList` creates an unordered list of the elements in the list. If the specified, it uses the bulletpoint style of the first argument.
+
+    *JTHTML.Lists> let l = ["foo", "bar", "baz", "qux"]
+    *JTHTML.Lists> toUnorderedList (Just "circle") l
+    "<ul style=\"list-style-type:circle\"><li>foo</li>\n<li>bar</li>\n<li>baz</li>\n<li>qux</li>\n</ul>\n"
+
 # Dependencies
 *none*
 
