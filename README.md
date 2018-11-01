@@ -9,7 +9,7 @@ The following instructions will show you how to incorporate this library into yo
 *none* =)
 
 ### Add the library to your project
-You have an existing project:
+Scenario: You have an existing git project called `myproject`.
 
     myproject$ tree -aL 1
     .
@@ -25,6 +25,7 @@ To add this library to your `myproject` simply run the following command at the 
 To refer to the library from your source code simply use `import JTHTML.[module]`
 
 ### Update to latest library release
+To update to the latest version of this library run the following commands inside your project.
 
     cd JTHTML
     git pull
@@ -33,11 +34,10 @@ To refer to the library from your source code simply use `import JTHTML.[module]
     git commit -m "Updated to latest JTHTML release"
 
 ### Checkout your repository
-If your repository contains this library as a submodule run the following:
+If your checking out your repository `myproject` from a remote origin you need to initalize the submodule(s) (i.e. this library) like this:
 
     git checkout https://myproject
     git submodule update --init
-
 
 # Usage Examples
 
@@ -86,6 +86,24 @@ Creates an HTML list where the first argument is a list of table headers (the bo
     <td>Pat</td>
     </tr>
     </table>
+
+# Testing
+All tests for this library are saved in `test/Tests.hs`. The `test/` directory is solely for testing this library.
+
+### Test dependencies
+All tests are written as [HUnit](http://hackage.haskell.org/package/HUnit) or [QuickCheck](http://hackage.haskell.org/package/QuickCheck) tests and are implemented using the [test-framework](http://batterseapower.github.com/test-framework/) package. All dependencies can be installed with cabal:
+
+    $ cabal install test-framework
+    $ cabal install test-framework-quickcheck2
+    $ cabal install test-framework-hunit
+
+### Run tests
+To run the test suite use:
+
+    JTHTML$ cd test/
+    test$ ./run_tests.sh
+
+Test results are shown on `stdout` and are additionally saved in `test/test-results.xml`, a JUnit-compatible XML file, which can be parsed by [Jenkins](https://jenkins.io/) or similar.
 
 # Misc
 Developer workflow and release management [as described](https://nvie.com/posts/a-successful-git-branching-model/) by Vincent Driessen.
