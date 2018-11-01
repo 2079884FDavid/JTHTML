@@ -6,7 +6,9 @@ import Test.QuickCheck
 import Test.HUnit
 
 import Data.List
+
 import JTHTML.Tags
+import JTHTML.Lists
 
 main = defaultMain tests
 
@@ -16,7 +18,11 @@ tests = [
   testGroup "JTHTML.Tags tagItemAttr" [
     testCase "Add emptry attribute list" test_jthtmlTags_tagItemAttr_noattr,
     testCase "Add a single attibute" test_jthtmlTags_tagItemAttr_oneattr,
-    testProperty "Add two attributes" prop_jthtmlTags_tagItemAttr_twoattr]
+    testProperty "Add two attributes" prop_jthtmlTags_tagItemAttr_twoattr],
+  testGroup "JTHTML.Lists toUnorderedList" [
+    testProperty "Check that list style is correct" prop_jthtmlLists_toUnorderedList_liststyle,
+    testCase "Empty list" test_jthtmlLists_toUnorderedList_empty,
+    testCase "Singleton list" test_jthtmlLists_toUnorderedList_oneelement]
   ]
 
 prop_jthtmlTags_tagItem_anytag s t = 
@@ -37,3 +43,13 @@ prop_jthtmlTags_tagItemAttr_twoattr s t =
     a = "<"++t++" "
     b = ">"++s++"</"++t++">\n"
   
+prop_jthtmlLists_toUnorderedList_liststyle s xs =
+  ("<ul style=\"list-style-type:"++s++"\">") `isPrefixOf` ul
+  where
+    ul = toUnorderedList (Just s) xs
+
+test_jthtmlLists_toUnorderedList_empty =
+  toUnorderedList Nothing [] @?= "<ul></ul>\n"
+
+test_jthtmlLists_toUnorderedList_oneelement =
+  toUnorderedList Nothing ["foo"] @?= "<ul><li>foo</li>\n</ul>\n"
