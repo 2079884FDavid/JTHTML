@@ -6,7 +6,10 @@ ghc -package test-framework -package test-framework-quickcheck2 \
     --make -i.:../.. -outputdir obj/ -o tests
 
 if (( $? )); then
-  echo "Could not comiple \"tests\""
+    echo "Could not comiple \"tests\"."
+    exit 1
 else
-  ./tests -a 1000 --jxml=test-results.xml
+    ./tests -a 1000 --jxml=test-results.xml
+    exit $?
 fi
+
