@@ -106,7 +106,7 @@ To run the test suite use:
 Test results are shown on `stdout` and are additionally saved in `test/test-results.xml`, a JUnit-compatible XML file, which can be parsed by [Jenkins](https://jenkins.io/) or similar.
 
 # Style Guide
-All source lines of this library should be at most 70 characters long (which can be checked with grep). Moreover, [`hlint`](community.haskell.org/~ndm/darcs/hlint/hlint.htm) should be used to assure high quality of the code. Both of this can be done as show below.
+All source lines of this library should be at most 70 characters long (which can be checked with grep). Moreover, [`hlint`](http://community.haskell.org/~ndm/darcs/hlint/hlint.htm) should be used to assure high quality of the code. Both of this can be done as show below.
 
     JTHTML$ cabal update
     JTHTML$ cabal install hlint
