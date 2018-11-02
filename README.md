@@ -88,7 +88,7 @@ Creates an HTML list where the first argument is a list of table headers (the bo
     </table>
 
 # Testing
-All tests for this library are saved in `test/Tests.hs`. The `test/` directory is solely for testing this library.
+All tests for this library are saved in `test/[module]Test.hs` and are combined in `test/Tests.hs`. The `test/` directory is solely for testing this library.
 
 ### Test dependencies
 All tests are written as [HUnit](http://hackage.haskell.org/package/HUnit) or [QuickCheck](http://hackage.haskell.org/package/QuickCheck) tests and are implemented using the [test-framework](http://batterseapower.github.com/test-framework/) package. All dependencies can be installed with cabal:
@@ -105,6 +105,15 @@ To run the test suite use:
 
 Test results are shown on `stdout` and are additionally saved in `test/test-results.xml`, a JUnit-compatible XML file, which can be parsed by [Jenkins](https://jenkins.io/) or similar.
 
+# Style Guide
+All source lines of this library should be at most 70 characters long (which can be checked with grep). Moreover, [`hlint`](http://community.haskell.org/~ndm/darcs/hlint/hlint.htm) should be used to assure high quality of the code. Both of this can be done as show below.
+
+    JTHTML$ cabal update
+    JTHTML$ cabal install hlint
+    JTHTML$
+    JTHTML$ hlint .
+    JTHTML$ grep -r --include \*.hs -n '.\{70\}' .
+
 # Misc
 Developer workflow and release management [as described](https://nvie.com/posts/a-successful-git-branching-model/) by Vincent Driessen.
 
@@ -113,4 +122,4 @@ Please check the [LICENSE](LICENSE) file for legal information.
 Please get [in touch](http://www.jacktex.eu/about/contact.php) if you would like to contribute to this project.
 
 ### Version
-v1.1
+v1.1.1
