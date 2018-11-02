@@ -9,8 +9,8 @@ main = defaultMain tests
 
 tests :: [Framework.Test]
 tests = [
-  group_lists_toUnorderedList,
-  group_tables_toTable,
-  group_tags_tagItem,
-  group_tags_tagItemAttr]
+  groupListsToUnorderedList,
+  groupTablesToTable,
+  groupTagsTagItem,
+  groupTagsTagItemAttr]
 

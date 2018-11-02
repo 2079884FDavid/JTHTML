@@ -1,5 +1,5 @@
 module TablesTest
-( group_tables_toTable
+( groupTablesToTable
 ) where
 import Test.Framework as Framework (Test, testGroup)
 import Test.Framework.Providers.HUnit
@@ -8,8 +8,8 @@ import Test.HUnit
 
 import JTHTML.Tables
 
-group_tables_toTable :: Framework.Test
-group_tables_toTable = testGroup "JTHTML.Tables toTable" [
+groupTablesToTable :: Framework.Test
+groupTablesToTable = testGroup "JTHTML.Tables toTable" [
     testCase "Empty table" test_toTable_empty,
     testCase "No headers" test_toTable_noheaders,
     testCase "Simple table" test_toTable_simple,
@@ -30,10 +30,13 @@ test_toTable_noheaders =
 
 test_toTable_simple :: Assertion
 test_toTable_simple =
-  toTable h c @?= "<table style=\"width:100%\">"++r1++r2++r3++r4++"</table>\n"
+  toTable h c @?= t
   where
     h = ["Name", "Nickname"]
-    c = [["Alexander", "Alex"], ["Elizabeth", "Lizzy"], ["Patrick", "Pat"]]
+    c = [["Alexander", "Alex"], 
+         ["Elizabeth", "Lizzy"], 
+         ["Patrick", "Pat"]]
+    t = "<table style=\"width:100%\">"++r1++r2++r3++r4++"</table>\n"
     r1 = "<tr><th>Name</th>\n<th>Nickname</th>\n</tr>\n"
     r2 = "<tr><td>Alexander</td>\n<td>Alex</td>\n</tr>\n"
     r3 = "<tr><td>Elizabeth</td>\n<td>Lizzy</td>\n</tr>\n"
@@ -41,8 +44,9 @@ test_toTable_simple =
 
 test_toTable_differentrows :: Assertion
 test_toTable_differentrows =
-  toTable [] c @?= "<table style=\"width:100%\">"++r1++r2++"</table>\n"
+  toTable [] c @?= t
   where
     c = [["foo", "bar"], ["a", "b", "c"]]
+    t = "<table style=\"width:100%\">"++r1++r2++"</table>\n"
     r1 = "<tr><td>foo</td>\n<td>bar</td>\n</tr>\n"
     r2 = "<tr><td>a</td>\n<td>b</td>\n<td>c</td>\n</tr>\n"

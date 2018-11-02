@@ -112,7 +112,7 @@ All source lines of this library should be at most 70 characters long (which can
     JTHTML$ cabal install hlint
     JTHTML$
     JTHTML$ hlint .
-    JTHTML$ grep -r --include \*.hs '.\{70\}' .
+    JTHTML$ grep -r --include \*.hs -n '.\{70\}' .
 
 # Misc
 Developer workflow and release management [as described](https://nvie.com/posts/a-successful-git-branching-model/) by Vincent Driessen.

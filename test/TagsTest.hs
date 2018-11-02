@@ -1,6 +1,6 @@
 module TagsTest
-( group_tags_tagItem
-, group_tags_tagItemAttr
+( groupTagsTagItem
+, groupTagsTagItemAttr
 ) where
 import Test.Framework as Framework (Test, testGroup)
 import Test.Framework.Providers.HUnit
@@ -10,12 +10,12 @@ import Test.HUnit
 
 import JTHTML.Tags
 
-group_tags_tagItem :: Framework.Test
-group_tags_tagItem = testGroup "JTHTML.Tags tagItem" [
+groupTagsTagItem :: Framework.Test
+groupTagsTagItem = testGroup "JTHTML.Tags tagItem" [
     testProperty "Add any tag" prop_tagItem_anytag]
 
-group_tags_tagItemAttr :: Framework.Test
-group_tags_tagItemAttr = testGroup "JTHTML.Tags tagItemAttr" [
+groupTagsTagItemAttr :: Framework.Test
+groupTagsTagItemAttr = testGroup "JTHTML.Tags tagItemAttr" [
     testCase "Add emptry attribute list" test_tagItemAttr_noattr,
     testCase "Add a single attibute" test_tagItemAttr_oneattr,
     testProperty "Add two attributes" prop_tagItemAttr_twoattr]

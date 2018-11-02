@@ -14,5 +14,5 @@ toTable headers content =
   tagItemAttr "table" ["style=\"width:100%\""] $ h++b
   where
     h = if null headers then "" else toTableRow "th" headers
-    b = concat $ map (toTableRow "td") content
+    b = concatMap (toTableRow "td") content
 
