@@ -3,5 +3,5 @@
 
 # But a few...
 !.gitignore
-!Tests.hs
+!*.hs
 !run_tests.sh
